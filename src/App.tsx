@@ -1,9 +1,7 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
 import './App.css';
 import { Admin, Resource, ListGuesser } from 'react-admin';
 import { UserList } from './users';
-import { PostList } from './posts';
+import { PostList, PostEdit, PostCreate } from './posts';
 import jsonServerProvider from 'ra-data-json-server';
 
 function App() {
@@ -16,8 +14,11 @@ function App() {
 			<header className='App-header'>
 				<Admin dataProvider={dataProvider}>
 					{/* <Resource name='users' list={ListGuesser} />  */}
-					<Resource name='posts' list={PostList} />
-					<Resource name='users' list={UserList} />
+					{/* <Resource name='posts' list={PostList} /> */}
+					{/* <Resource name='posts' list={PostList} edit={EditGuesser} /> */}
+					{/* <Resource name='posts' list={PostList} edit={PostEdit} /> */}
+					<Resource name='posts' list={PostList} edit={PostEdit} create={PostCreate} />
+					<Resource name='users' list={UserList} recordRepresentation='name' />
 				</Admin>
 			</header>
 		</div>
