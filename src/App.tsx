@@ -1,4 +1,6 @@
 import './App.css';
+import PostIcon from '@mui/icons-material/Book';
+import UserIcon from '@mui/icons-material/Group';
 import { Admin, Resource, ListGuesser } from 'react-admin';
 import { UserList } from './users';
 import { PostList, PostEdit, PostCreate } from './posts';
@@ -17,8 +19,19 @@ function App() {
 					{/* <Resource name='posts' list={PostList} /> */}
 					{/* <Resource name='posts' list={PostList} edit={EditGuesser} /> */}
 					{/* <Resource name='posts' list={PostList} edit={PostEdit} /> */}
-					<Resource name='posts' list={PostList} edit={PostEdit} create={PostCreate} />
-					<Resource name='users' list={UserList} recordRepresentation='name' />
+					<Resource
+						name='posts'
+						list={PostList}
+						edit={PostEdit}
+						create={PostCreate}
+						icon={PostIcon}
+					/>
+					<Resource
+						name='users'
+						list={UserList}
+						icon={UserIcon}
+						recordRepresentation='name'
+					/>
 				</Admin>
 			</header>
 		</div>
