@@ -18,7 +18,7 @@ export const UserList = () => {
 					<TextField source='id' />
 					<TextField source='name' />
 					<EmailField source='email' />
-					<TextField source='phone' />
+					{/* <TextField source='phone' /> */}/
 					<MyUrlField source='website' />
 					<TextField source='company.name' />
 				</Datagrid>
