@@ -1,4 +1,6 @@
 import { useRecordContext } from 'react-admin';
+import { Link } from '@mui/material';
+import LaunchIcon from '@mui/icons-material/Launch';
 
 type MyUrlFieldProps = {
 	source: any;
@@ -6,7 +8,12 @@ type MyUrlFieldProps = {
 
 const MyUrlField = ({ source }: MyUrlFieldProps) => {
 	const record = useRecordContext();
-	if (!record) return null;
-	return <a href={record[source]}>{record[source]}</a>;
+	return record ? (
+		<Link href={record[source]} sx={{ textDecoration: 'none' }}>
+			{record[source]}
+			<LaunchIcon sx={{ fontSize: 15, ml: 1 }} />
+		</Link>
+	) : null;
 };
+
 export default MyUrlField;
