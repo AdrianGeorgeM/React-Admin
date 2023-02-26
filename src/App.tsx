@@ -4,6 +4,7 @@ import UserIcon from '@mui/icons-material/Group';
 import { Admin, Resource, ListGuesser } from 'react-admin';
 import { UserList } from './users';
 import { Dashboard } from './Dashboard';
+import { authProvider } from './authProvider';
 import { PostList, PostEdit, PostCreate } from './posts';
 import jsonServerProvider from 'ra-data-json-server';
 
@@ -15,7 +16,11 @@ function App() {
 	return (
 		<div className='App'>
 			<header className='App-header'>
-				<Admin dataProvider={dataProvider} dashboard={Dashboard}>
+				<Admin
+					authProvider={authProvider}
+					dataProvider={dataProvider}
+					dashboard={Dashboard}
+				>
 					{/* <Resource name='users' list={ListGuesser} />  */}
 					{/* <Resource name='posts' list={PostList} /> */}
 					{/* <Resource name='posts' list={PostList} edit={EditGuesser} /> */}
